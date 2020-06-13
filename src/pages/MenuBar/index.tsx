@@ -1,8 +1,9 @@
 import React from 'react';
-import './style.css';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import { Link } from 'react-router-dom';
+import './style.css';
 
 const MenuBar = () => {
     return (
@@ -11,7 +12,9 @@ const MenuBar = () => {
                 <h1 className="title">Cadastro de Livros</h1>
             </Col>
             <Col xs={6} className="btn-container">
-                <Button className="btn-add" variant="outline-light">Adicionar Livro</Button>
+                <Link to="/create">
+                    <Button className="btn-add" variant="outline-light">Adicionar Livro</Button>
+                </Link>
             </Col>
         </Row>
     );
