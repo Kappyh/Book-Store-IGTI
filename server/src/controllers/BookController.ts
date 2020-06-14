@@ -76,7 +76,9 @@ export class BookController {
 
         await trx.commit();
 
-        return response.json({ message: 'Deletado com sucesso!' })
+        const books = await knex('books').select('*')
+
+        return response.json(books)
     }
 
 

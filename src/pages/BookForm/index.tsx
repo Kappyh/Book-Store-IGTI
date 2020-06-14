@@ -1,5 +1,4 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
-import axios from 'axios';
 import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
 import Swal from 'sweetalert2'

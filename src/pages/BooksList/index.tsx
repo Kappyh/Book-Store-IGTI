@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import api from '../../services/api'
 
 import './style.css';
@@ -20,11 +19,13 @@ const BooksList = () => {
         })
     }, []);
 
-    function removeBook(id: number) {
+    function removeBook(id: number | undefined) {
         api.delete(`/books/${id}`).then(response => {
-            Swal.fire('Sucesso', response.data.message, 'success');
+            setBooks(response.data);
+            Swal.fire('Sucesso', 'Livro removido!', 'success');
         })
-    }
+    };
+
     return (
         <Row className="align-content">
             <Col xs={8}>
@@ -49,7 +50,7 @@ const BooksList = () => {
                                     <td>{book.publisher}</td>
                                     <td>{book.field}</td>
                                     <td>
-                                        <Button size="sm" variant="danger">Excluir</Button>
+                                        <Button size="sm" variant="danger" onClick={() => removeBook(book.id)} >Excluir</Button>
                                         <Button size="sm" variant="warning">Editar</Button>
                                     </td>
                                 </tr>
