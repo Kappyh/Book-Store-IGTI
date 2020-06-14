@@ -9,7 +9,9 @@ const MenuBar = () => {
     return (
         <Row className="menu-bar">
             <Col xs={6}>
-                <h1 className="title">Cadastro de Livros</h1>
+                <Link to="/">
+                    <h1 className="title">Cadastro de Livros</h1>
+                </Link>
             </Col>
             <Col xs={6} className="btn-container">
                 <Link to="/create">

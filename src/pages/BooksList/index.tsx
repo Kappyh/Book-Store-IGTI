@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/Table';
 
 const BooksList = () => {
     return (
-        <Row className="table-container">
+        <Row className="align-content">
             <Col xs={8}>
                 <Table striped bordered hover>
                     <thead>
