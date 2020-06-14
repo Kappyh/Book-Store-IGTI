@@ -56,8 +56,8 @@ const BooksList = () => {
                                     <td>{book.publisher}</td>
                                     <td>{book.field}</td>
                                     <td>
-                                        <Button size="sm" variant="danger" onClick={() => removeBook(book.id)} >Excluir</Button>
-                                        <Button size="sm" variant="warning" onClick={() => editBook(book.id)}>Editar</Button>
+                                        <Button size="sm" className="btn-remove" variant="danger" onClick={() => removeBook(book.id)} >Excluir</Button>
+                                        <Button size="sm"  variant="warning" onClick={() => editBook(book.id)}>Editar</Button>
                                     </td>
                                 </tr>
                             );

@@ -1,3 +1,6 @@
 .column-action{
     min-width: 170px;
 }
+.btn-remove{
+    margin-right: 10px;
+}
