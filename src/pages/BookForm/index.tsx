@@ -35,7 +35,7 @@ const BookForm = () => {
             publisher,
             field
         };
-        await api.post('book', data);
+        await api.post('books', data);
         Swal.fire('Sucesso', 'Livro salvo com sucesso');
         history.push('/');
     }
