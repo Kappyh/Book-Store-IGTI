@@ -8,6 +8,8 @@ const bookController = new BookController();
 
 routes.get('/books', bookController.index);
 
+routes.get('/books/:id', bookController.show);
+
 routes.post('/books', bookController.create);
 
 routes.post('/books/:id', bookController.update);

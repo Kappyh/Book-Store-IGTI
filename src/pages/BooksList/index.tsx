@@ -8,10 +8,12 @@ import Table from 'react-bootstrap/Table';
 import { IBook } from '../../models/Ibook';
 import Button from 'react-bootstrap/Button';
 import Swal from 'sweetalert2';
+import { useHistory } from 'react-router-dom';
 
 const BooksList = () => {
 
     const [books, setBooks] = useState<Array<IBook>>([]);
+    const history = useHistory();
 
     useEffect(() => {
         api.get('books').then(response => {
@@ -25,6 +27,10 @@ const BooksList = () => {
             Swal.fire('Sucesso', 'Livro removido!', 'success');
         })
     };
+
+    function editBook(id: number | undefined) {
+        history.push(`/edit/book/${id}`);
+    }
 
     return (
         <Row className="align-content">
@@ -51,7 +57,7 @@ const BooksList = () => {
                                     <td>{book.field}</td>
                                     <td>
                                         <Button size="sm" variant="danger" onClick={() => removeBook(book.id)} >Excluir</Button>
-                                        <Button size="sm" variant="warning">Editar</Button>
+                                        <Button size="sm" variant="warning" onClick={() => editBook(book.id)}>Editar</Button>
                                     </td>
                                 </tr>
                             );

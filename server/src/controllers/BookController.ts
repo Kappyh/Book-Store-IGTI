@@ -10,6 +10,13 @@ export class BookController {
         return response.json(books);
     }
 
+    async show(request: Request, response: Response) {
+        const { id } = request.params;
+        const book = await knex('books').where('id', id);
+
+        return response.json(book);
+    };
+
     async create(request: Request, response: Response) {
         const {
             title,
